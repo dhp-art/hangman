@@ -10,6 +10,7 @@ import java.util.Scanner;
     public class WordManager {
 
     private ArrayList<String> words;
+    private String currentWord;
 
     public WordManager(String filePath) {
 
@@ -33,7 +34,23 @@ import java.util.Scanner;
     }
 
     public String getRandomWord() {
-        return words.get((int)(Math.random() * words.size()));
+
+        String randomWord = words.get((int)(Math.random() * words.size()));
+        this.currentWord = randomWord;
+        return randomWord;
+
+    }
+
+    public boolean isWordComplete(String guessedLetters) {
+
+        int foundLetter = 0;
+
+        for (char letter : this.currentWord.toCharArray()) {
+            if (guessedLetters.contains(String.valueOf(letter))){
+                foundLetter++;
+            }
+        }
+        return foundLetter == this.currentWord.length();
     }
 
 
