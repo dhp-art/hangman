@@ -12,7 +12,7 @@ import java.util.Scanner;
     private ArrayList<String> words;
     private String currentWord;
 
-    public WordManager(String filePath) {
+    public WordManager() {
 
         words = new ArrayList<>();
 

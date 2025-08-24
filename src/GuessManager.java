@@ -5,6 +5,7 @@ public class GuessManager {
     private ArrayList<Character> correctGuesses;
     private ArrayList<Character> incorrectGuesses;
 
+
     public GuessManager() {
         correctGuesses = new ArrayList<>();
         incorrectGuesses = new ArrayList<>();
@@ -27,7 +28,11 @@ public class GuessManager {
     }
 
     public boolean isGameOver() {
-        return getWrongGuessCount() == 6;
+        return getWrongGuessCount() == incorrectGuesses.size();
+    }
+
+    public int getCorrectGuess() {
+        return correctGuesses.size();
     }
 
 
