@@ -53,5 +53,25 @@ import java.util.Scanner;
         return foundLetter == this.currentWord.length();
     }
 
+    public boolean isLetterInWord(char letter) {
+        return this.currentWord.contains(Character.toString(letter));
+    }
+
+    public void displayWordState(ArrayList<Character> revealedLetters) {
+
+        String result = "";
+
+        for (char letter : this.currentWord.toCharArray()) {
+            if (revealedLetters.contains(letter)) {
+                result = result + letter;
+            } else {
+                result = result + "_";
+            }
+            
+        }
+        System.out.println(result);
+    }
+
+
 
 }
