@@ -38,15 +38,14 @@ import java.util.Scanner;
         String randomWord = words.get((int)(Math.random() * words.size()));
         this.currentWord = randomWord;
         return randomWord;
-
     }
 
-    public boolean isWordComplete(String guessedLetters) {
+    public boolean isWordComplete(ArrayList<Character> guessedLetters) {
 
         int foundLetter = 0;
 
         for (char letter : this.currentWord.toCharArray()) {
-            if (guessedLetters.contains(String.valueOf(letter))){
+            if (guessedLetters.contains(letter)){
                 foundLetter++;
             }
         }

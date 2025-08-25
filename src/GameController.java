@@ -16,8 +16,27 @@ public class GameController {
 
     public void startGame() {
         //1. initialize the game
+        String randomWord = this.wordManager.getRandomWord();
+        System.out.println("\nLET'S START HANGMAN GAME!");
 
         //2. while loop
+        while (!this.guessManager.isGameOver() &&
+                !this.wordManager.isWordComplete(this.guessManager.getCorrectGuesses())) {
+
+            this.hangmanDraw.drawHangman(this.guessManager.getWrongGuessCount());
+            this.wordManager.displayWordState(this.guessManager.getCorrectGuesses());
+
+            System.out.println("GUESS A LETTER IN LATIN: ");
+            String input = this.scanner.nextLine();
+            if (input.isEmpty()) {
+                System.out.println("OOPS! GUESS A LETTER IN LATIN: ");
+            }
+            char playerGuess = input.toUpperCase().charAt(0);
+
+
+
+
+        }
 
         //3. win/lose final result
     }

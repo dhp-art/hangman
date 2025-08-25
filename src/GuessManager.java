@@ -35,5 +35,9 @@ public class GuessManager {
         return correctGuesses.size();
     }
 
+    public ArrayList<Character> getCorrectGuesses() {
+        return correctGuesses;
+    }
+
 
 }
